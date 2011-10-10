@@ -1,6 +1,9 @@
-rbenvdir=$HOME/.rbenv/bin
-if [ -d $rbenvdir ] ; then
-  export PATH=$rbenvdir:$PATH
+if [ -d ~/.rbenv/bin ] ; then
+  export PATH=~/.rbenv/bin:$PATH
+  rehash
+fi
+
+if {which rbenv > /dev/null} ; then
   eval "$(rbenv init -)"
 
   alias rubies="rbenv versions"
